@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pdf_dowload</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="col-md-10 mb-4">
+        <div class="row">
+            <div class="col-md-12 mb-3">
+                <div class="form-group">
+                    <form method="POST" action="/pdf" enctype="multipart/form-data">    
+                        <label for="arquivo" class="form-label">Option : decode here</label>
+                        <br>
+                        <input class="form-control" type="file" id="arquivo" name="arquivo">
+                        <br>
+                        <input type="submit" value="Decode and Download" class="btn btn-primary w-md">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
