@@ -82,3 +82,6 @@ def pdf():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+    # servidor do heroku
+#requirements.txt
