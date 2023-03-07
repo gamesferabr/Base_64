@@ -1,7 +1,7 @@
 import base64
 import os
-from io import BytesIO
-from flask import Flask, render_template, request, redirect, url_for, send_file,make_response
+#from io import BytesIO
+from flask import Flask, render_template, request, redirect, url_for,make_response
 from flask_login import LoginManager, UserMixin, login_user, login_required
 from flask_bcrypt import Bcrypt
 
