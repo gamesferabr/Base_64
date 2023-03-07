@@ -75,13 +75,10 @@ def pdf():
         # Codificar o arquivo em base64 e converter para PDF
         nome_arquivo,extensao = os.path.splitext(arquivo.filename)
         encoded_string = base64.b64decode(arquivo.read())
-        return send_file(BytesIO(encoded_string), attachment_filename=f"{nome_arquivo}.pdf", as_attachment=False)
+        return send_file(BytesIO(encoded_string), attachment_filename=f"{nome_arquivo}.pdf", as_attachment=True)
     
     return render_template('pdf.html')
 
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-    # servidor do heroku
-#requirements.txt
