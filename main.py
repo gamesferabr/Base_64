@@ -1,7 +1,7 @@
 import base64
 import os
 from io import BytesIO
-from flask import Flask, render_template, request, redirect, url_for, send_file
+from flask import Flask, render_template, request, redirect, url_for, send_file,make_response
 from flask_login import LoginManager, UserMixin, login_user, login_required
 from flask_bcrypt import Bcrypt
 
@@ -75,7 +75,10 @@ def pdf():
         # Codificar o arquivo em base64 e converter para PDF
         nome_arquivo,extensao = os.path.splitext(arquivo.filename)
         encoded_string = base64.b64decode(arquivo.read())
-        return send_file(BytesIO(encoded_string), attachment_filename=f"{nome_arquivo}.pdf", as_attachment=True)
+        response = make_response(encoded_string)
+        response.headers.set('Content-Disposition', f'attachment; filename={nome_arquivo}.pdf')
+        response.headers.set('Content-Type', 'application/pdf')
+        return response
     
     return render_template('pdf.html')
 
